@@ -1,3 +1,3 @@
-require("cerdelen.packer")
-require("cerdelen.remap")
+require("cerdelen.lazy")
 require("cerdelen.set")
+require("cerdelen.remap")

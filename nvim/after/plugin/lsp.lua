@@ -1,9 +1,15 @@
+require("neoconf").setup({
+  -- override any of the default settings here
+})
+
 local lsp = require("lsp-zero")
+
 
 lsp.preset("recommended")
 
 lsp.ensure_installed({
     'clangd',
+    'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
