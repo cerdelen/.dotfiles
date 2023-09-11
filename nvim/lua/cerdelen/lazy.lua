@@ -55,8 +55,6 @@ require("lazy").setup({
     },
     'nvim-treesitter/playground',
 
-    -- 'nvim-treesitter/nvim-treesitter-context',
-
     -- plugin to configure neovim with json files (can have global configs or local)
     {
         "folke/neoconf.nvim",
@@ -66,6 +64,24 @@ require("lazy").setup({
     -- lsp server for lua
     "folke/neodev.nvim",
 
+    -- floating terminals
+    -- 'voldikss/vim-floaterm',
+
+    {
+        {
+            'akinsho/toggleterm.nvim',
+            version = "*",
+            opts = { 
+                open_mapping = [[<c-\>]],
+                winbar = {
+                    enabled = false,
+                    name_formatter = function(term) --  term: Terminal
+                        return term.name
+                    end
+                },
+            },
+        },
+    },
 
     -- harpoon = best
     "ThePrimeagen/harpoon",
