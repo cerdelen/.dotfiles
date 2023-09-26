@@ -17,8 +17,6 @@ require("lazy").setup({
     {
         'dracula/vim',
         as = 'dracula',
-        -- lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        -- priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- disable_background = true
             vim.cmd('colorscheme dracula')
@@ -64,24 +62,14 @@ require("lazy").setup({
     -- lsp server for lua
     "folke/neodev.nvim",
 
-    -- floating terminals
-    -- 'voldikss/vim-floaterm',
-
     {
-        {
-            'akinsho/toggleterm.nvim',
-            version = "*",
-            opts = { 
-                open_mapping = [[<c-\>]],
-                winbar = {
-                    enabled = false,
-                    name_formatter = function(term) --  term: Terminal
-                        return term.name
-                    end
-                },
-            },
-        },
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
     },
+
+    -- not so sure about this ... its a search tool to quickly jump to anything visible in the window
+    "ggandor/lightspeed.nvim",
 
     -- harpoon = best
     "ThePrimeagen/harpoon",
@@ -91,6 +79,32 @@ require("lazy").setup({
     "tpope/vim-fugitive",
     -- pepeg commenting plugin
     'tpope/vim-commentary',
+
+    -- insane database inregrated tool
+    -- https://www.youtube.com/watch?v=NhTPVXP8n7w&ab_channel=DevOpsToolbox
+
+
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            cmdline = {
+                enabled = true, -- enables the Noice cmdline UI
+                view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
+                opts = {}, -- global options for the cmdline. See section on views
+                format = {
+                    cmdline = { pattern = "^:", icon = "", lang = "vim" },
+                    search_down = { kind = "search", pattern = "^/", icon = "\"s-down\"", lang = "regex" },
+                    search_up = { kind = "search", pattern = "^%?", icon = "\"s-up\"", lang = "regex" },
+                    filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+                    lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
+                    help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+                    input = {}, -- Used by input()
+                },
+            },
+        },
+        dependencies = { "MunifTanjim/nui.nvim" }
+    },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',

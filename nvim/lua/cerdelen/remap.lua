@@ -54,9 +54,28 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 
 -- selects what is below your cursour to rename it
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- vim.keymap.set("n", "<leader>s", function()
+--     vim.cmd("set hlsearch")
+--     -- local Target = vim.fn.input("Search > ")
+--     -- vim.cmd("/" .. Target)
+--     -- vim.cmd([[/I<Left>]])
+-- end)
+
+-- vim.keymap.set("n", "<Esc>", function()
+--     vim.cmd("nohl")
+-- end) 
+
+vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 
--- vim.keymap.set("n", "<leader><leader>", function()
---     vim.cmd("so", opts)
--- end, opts)
+-- Terminal mode
+-- getting out of Terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+vim.keymap.set("n", "<leader>t", function()
+    vim.cmd([[:split]])
+    vim.cmd([[:winc j]])
+    vim.cmd([[:resize -6]])
+    vim.cmd([[:term]])
+    vim.cmd([[:startinsert]])
+end)
+
