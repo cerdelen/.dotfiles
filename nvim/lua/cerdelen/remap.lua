@@ -3,6 +3,8 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
 
+-- Find out which one to use because otherwise i cannot toggle if i od the findfile
+vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle<CR>", opts)
 
 -- INSERT MODE
 -- Better window navigation
@@ -12,7 +14,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-vim.keymap.set("n", "<leader>pv", ":Lex 25<CR>", opts)
 vim.keymap.set("n", "<S-Up>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<S-Down>", ":resize -2<CR>", opts)
 vim.keymap.set("n", "<S-Left>", ":vertical resize +2<CR>", opts)

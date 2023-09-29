@@ -1,4 +1,13 @@
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
+vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correctlazy
+
+-- this is for nvim tree
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -83,28 +92,37 @@ require("lazy").setup({
     -- insane database inregrated tool
     -- https://www.youtube.com/watch?v=NhTPVXP8n7w&ab_channel=DevOpsToolbox
 
+    "mfussenegger/nvim-dap",
 
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {
-            cmdline = {
-                enabled = true, -- enables the Noice cmdline UI
-                view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-                opts = {}, -- global options for the cmdline. See section on views
-                format = {
-                    cmdline = { pattern = "^:", icon = "", lang = "vim" },
-                    search_down = { kind = "search", pattern = "^/", icon = "\"s-down\"", lang = "regex" },
-                    search_up = { kind = "search", pattern = "^%?", icon = "\"s-up\"", lang = "regex" },
-                    filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
-                    lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-                    help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
-                    input = {}, -- Used by input()
-                },
-            },
-        },
-        dependencies = { "MunifTanjim/nui.nvim" }
-    },
+    {import = "cerdelen/nvim-tree.lua"},
+    -- {
+    --     "nvim-tree/nvim-tree.lua",
+    --     dependencies = { "kyazdani42/nvim-web-devicons" },
+
+    -- },
+
+
+    -- {
+    --     "folke/noice.nvim",
+    --     event = "VeryLazy",
+    --     opts = {
+    --         cmdline = {
+    --             enabled = true, -- enables the Noice cmdline UI
+    --             view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
+    --             opts = {}, -- global options for the cmdline. See section on views
+    --             format = {
+    --                 cmdline = { pattern = "^:", icon = "", lang = "vim" },
+    --                 search_down = { kind = "search", pattern = "^/", icon = "\"s-down\"", lang = "regex" },
+    --                 search_up = { kind = "search", pattern = "^%?", icon = "\"s-up\"", lang = "regex" },
+    --                 filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+    --                 lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
+    --                 help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+    --                 input = {}, -- Used by input()
+    --             },
+    --         },
+    --     },
+    --     dependencies = { "MunifTanjim/nui.nvim" }
+    -- },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
