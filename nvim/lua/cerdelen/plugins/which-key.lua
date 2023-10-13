@@ -24,8 +24,8 @@ return {
             u = "UndooTree Toggle",
             t = "Open Terminal",
             l = {
-                name = "LazyGit",
-                g = "LazyGit",
+                name = "Gitui",
+                g = "Gitui",
             },
 			Tab = {
 				name = "Show tabs",

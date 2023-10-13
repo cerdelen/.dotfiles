@@ -18,16 +18,16 @@ vim.opt.rtp:prepend(lazypath)
 -- maybe debug adapter??? e.g. "mfussenegger/nvim-dap"
 
 require("lazy").setup(
-{{import = "cerdelen.plugins"}, {import = "cerdelen.plugins.lsp"}},
-{
-    install = {
-		colorscheme = { "dracula" },
-	},
-	checker = {
-		enabled = true,
-		notify = false,
-	},
-	change_detection = {
-		notify = false,
+	{{import = "cerdelen.plugins"}, {import = "cerdelen.plugins.lsp"}},
+	{
+		install = {
+			colorscheme = { "dracula" },
+		},
+		checker = {
+			enabled = true,
+			notify = false,
+		},
+		change_detection = {
+			notify = false,
 	},
 })
