@@ -7,4 +7,8 @@
     stash_open: Some(( code: Char('l'), modifiers: ( bits: 0,),)),
 
     open_help: Some(( code: Char('?'), modifiers: ( bits: 0,),)),
+
+	// exit_popup: Some(( code: Char('q'), modifiers: ( bits: 0,),)),
+	// quit: Some(( code: Char('x'), modifiers: ( bits: 0,),)),
+
 )
