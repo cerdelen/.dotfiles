@@ -81,3 +81,10 @@ else
 	echo "wezterm already installed ✅"
 fi
 
+# Install bacon
+if ! command -v bacon &> /dev/null; then
+	echo "Trying to install bacon"
+	cargo install --locked bacon
+else
+	echo "bacon already installed ✅"
+fi
