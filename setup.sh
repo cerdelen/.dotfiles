@@ -26,8 +26,8 @@ for font_file in "${nerd_font_files[@]}"; do
 done
 
 # Install ripgrep (dont know how ot check if installed)
-if brew list | grep -q "ripgrep"; then
-    echo "ripgrep is already."
+if brew list | grep "ripgrep" > /dev/null; then
+    echo "ripgrep is already ✅"
 else
 	brew install ripgrep
 fi
