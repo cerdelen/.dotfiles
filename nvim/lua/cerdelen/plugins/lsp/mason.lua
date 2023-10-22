@@ -23,7 +23,7 @@ return {
 				 "clangd",
 				 "rust_analyzer",
 				 "lua_ls",
-				 "graphql",
+				 -- "graphql",
 			 },
 			 -- auto-install configured servers (with lspconfig)
 			 automatic_installation = true, -- not the same as ensure_installed
