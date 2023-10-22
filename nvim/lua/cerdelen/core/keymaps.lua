@@ -2,8 +2,6 @@ local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
 
-
-
 -- INSERT MODE
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
@@ -47,36 +45,25 @@ vim.keymap.set("x", "<R-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- next greatest remap ever : asbjornHaland
 -- yanking into pc clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- deleting without yanking
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
-
-
--- selects what is below your cursour to rename it
--- vim.keymap.set("n", "<leader>s", function()
---     vim.cmd("set hlsearch")
---     -- local Target = vim.fn.input("Search > ")
---     -- vim.cmd("/" .. Target)
---     -- vim.cmd([[/I<Left>]])
--- end)
-
--- vim.keymap.set("n", "<Esc>", function()
---     vim.cmd("nohl")
--- end) 
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("v", "<leader>S", [[:s/\v%V//g<Left><Left><Left>]])
+-- I'm too stupid to create a mapping taking what is in visual mode and looking for it in whole buffer to be replaced
 
 
 -- Terminal mode
 -- getting out of Terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "<leader>t", function()
-    vim.cmd([[:split]])
-    vim.cmd([[:winc j]])
-    vim.cmd([[:resize -6]])
-    vim.cmd([[:term]])
-    vim.cmd([[:startinsert]])
+	vim.cmd([[:split]])
+	vim.cmd([[:winc j]])
+	vim.cmd([[:resize -6]])
+	vim.cmd([[:term]])
+	vim.cmd([[:startinsert]])
 end)
 
 vim.keymap.set("n", "<leader><tab><tab>", ":set invlist<CR>", opts)
