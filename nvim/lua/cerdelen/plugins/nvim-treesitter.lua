@@ -23,7 +23,7 @@ return {
  --         enable = true,
  --       },
         -- ensure these language parsers are installed
-        ensure_installe = { "yaml", "json", "cpp", "c", "lua", "vim", "vimdoc", "query", "rust", "bash", "lua", "dockerfile", "gitignore", },
+        ensure_installed = { "yaml", "json", "cpp", "c", "lua", "vim", "vimdoc", "query", "rust", "bash", "lua", "dockerfile", "gitignore", },
         -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 --       context_commentstring = {
 --          enable = true,
