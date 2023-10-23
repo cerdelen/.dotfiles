@@ -47,7 +47,7 @@ if ! command -v bat &> /dev/null; then
 	echo alias cat=bat >> ~/.zshrc
 	echo >> ~/.zshrc
 	mkdir -p ~/.config/bat
-	echo --theme="Dracula" >> ~/.config/bat/config
+	echo --theme="Dracula" > ~/.config/bat/config
 else
 	echo "bat already installed ✅"
 fi
