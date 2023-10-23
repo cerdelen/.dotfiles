@@ -35,7 +35,7 @@ fi
 if ! command -v bat &> /dev/null; then
 	echo "Trying to install bat"
 	brew install bat
-	echo "# bat as new cat" >> ~/.zshrc
+	echo "# bat things" >> ~/.zshrc
 	echo alias cat=bat >> ~/.zshrc
 	echo >> ~/.zshrc
 	mkdir -p ~/.config/bat
@@ -48,6 +48,9 @@ fi
 if ! command -v batgrep &> /dev/null; then
 	echo "Trying to install batgrep"
 	brew install eth-p/software/bat-extras-batgrep
+	echo "# batgrep things" >> ~/.zshrc
+	echo alias grep=batgrep >> ~/.zshrc
+	echo >> ~/.zshrc
 else
 	echo "batgrep already installed ✅"
 fi
@@ -66,7 +69,7 @@ if ! command -v exa &> /dev/null; then
 	cargo install exa
 	echo "# exa things" >> ~/.zshrc
 	echo alias ls=exa >> ~/.zshrc
-	echo alias ee="exa -lahF" >> ~/.zshrc
+	echo alias ee=\"exa -lahF\" >> ~/.zshrc
 	echo >> ~/.zshrc
 else
 	echo "exa already installed ✅"
@@ -78,7 +81,7 @@ if ! command -v zoxide &> /dev/null; then
 	cargo install zoxide
 	autoload -U compinit
 	echo "# zoxide things" >> ~/.zshrc
-	echo eval "$(zoxide init zsh)" >> ~/.zshrc
+	echo eval "\$(zoxide init zsh)" >> ~/.zshrc
 	echo alias cd=z >> ~/.zshrc
 	echo alias cc=zi >> ~/.zshrc
 	echo >> ~/.zshrc

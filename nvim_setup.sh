@@ -8,6 +8,9 @@ check_command() {
 if ! check_command nvim; then
 	echo "Trying to install nvim"
 	brew install neovim 
+	echo "# nvim things" >> ~/.zshrc
+	echo EDITOR=nvim >> ~/.zshrc
+	echo >> ~/.zshrc
 else
 	echo "nvim already installed ✅"
 fi
