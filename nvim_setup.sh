@@ -4,6 +4,19 @@ check_command() {
     command -v "$1" &> /dev/null
 }
 
+# Install Rust (zellij and wezterm run on Rust)
+if ! command -v rustup &> /dev/null || ! command -v cargo &> /dev/null || ! command -v rustc &> /dev/null; then
+	echo "Rust, Rustup or Cargo is not installed. Trying to install Rust"
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+	echo "Rust and tools already installed ✅"
+fi
+
+if ! command -v rustup &> /dev/null || ! command -v cargo &> /dev/null || ! command -v rustc &> /dev/null; then
+	echo "Error installing Rust and its tools, please install manually"
+	exit 1
+fi
+
 # Install nvim
 if ! check_command nvim; then
 	echo "Trying to install nvim"
