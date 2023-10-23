@@ -35,3 +35,11 @@ if ! command -v bacon &> /dev/null; then
 else
 	echo "bacon already installed ✅"
 fi
+
+# Install nerdfont
+nerd_font_files=("MesloLGLNerdFontMono-Bold.ttf" "MesloLGLNerdFontMono-BoldItalic.ttf" "MesloLGLNerdFontMono-Italic.ttf" "MesloLGLNerdFontMono-Regular.ttf")
+for font_file in "${nerd_font_files[@]}"; do
+    if [ ! -f "$HOME/Library/Fonts/$font_file" ]; then
+        echo "Nerd Font file '$font_file' is missing. Please install it in ~/Library/Fonts"
+    fi
+done

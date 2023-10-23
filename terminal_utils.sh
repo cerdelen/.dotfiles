@@ -17,14 +17,6 @@ if ! command -v rustup &> /dev/null || ! command -v cargo &> /dev/null || ! comm
 	exit 1
 fi
 
-# Install nerdfont
-nerd_font_files=("MesloLGLNerdFontMono-Bold.ttf" "MesloLGLNerdFontMono-BoldItalic.ttf" "MesloLGLNerdFontMono-Italic.ttf" "MesloLGLNerdFontMono-Regular.ttf")
-for font_file in "${nerd_font_files[@]}"; do
-    if [ ! -f "$HOME/Library/Fonts/$font_file" ]; then
-        echo "Nerd Font file '$font_file' is missing. Please install it in ~/Library/Fonts"
-    fi
-done
-
 # Install ripgrep
 if brew list | grep "ripgrep" > /dev/null; then
     echo "ripgrep is already ✅"
