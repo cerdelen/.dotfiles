@@ -8,10 +8,10 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				rust = { "rustfmt" },
-				c = { "clang_format" },
-				cpp = { "clang_format" },
-				h = { "clang_format" },
-				hpp = { "clang_format" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
+				h = { "clang-format" },
+				hpp = { "clang-format" },
 				lua = { "stylua" },
 			},
 			format_on_save = {
