@@ -24,7 +24,6 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)
 
-
 -- Visual --
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv^", opts)
@@ -42,7 +41,6 @@ vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", opts)
 vim.keymap.set("x", "<S-j>", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("x", "<R-k>", ":m '<-2<CR>gv=gv", opts)
 
-
 -- next greatest remap ever : asbjornHaland
 -- yanking into pc clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -53,7 +51,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("v", "<leader>S", [[:s/\v%V//g<Left><Left><Left>]])
 -- I'm too stupid to create a mapping taking what is in visual mode and looking for it in whole buffer to be replaced
-
 
 -- Terminal mode
 -- getting out of Terminal mode
@@ -69,3 +66,11 @@ end)
 vim.keymap.set("n", "<leader><tab><tab>", ":set invlist<CR>", opts)
 vim.keymap.set("n", "<leader>sh", ":set hlsearch<CR>", opts)
 vim.keymap.set("n", "<leader>so", ":noh<CR>", opts)
+
+vim.keymap.set("n", "<leader>gs", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", opts)
+vim.keymap.set(
+	"n",
+	"<leader>gn",
+	"<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+	opts
+)
