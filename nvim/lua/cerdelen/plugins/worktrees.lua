@@ -1,21 +1,20 @@
-return {
-	"ThePrimeagen/git-worktree.nvim",
-	conf = function()
-		require("git-worktree").setup()
-		require("telescope").load_extension("git_worktree")
-
-		local opts = { noremap = true, silent = true }
-
-		-- vim.keymap.set(
-		-- 	"n",
-		-- 	"<Leader>gs",
-		-- 	"<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
-		-- 	opts
-		-- )
-		-- vim.keymap.set("n", "<leader>a", mark.add_file)
-	end,
-	print("set the new ketmaps"),
-}
+-- return {
+-- 	"ThePrimeagen/git-worktree.nvim",
+-- 	conf = function()
+-- 		require("git-worktree").setup()
+-- 		require("telescope").load_extension("git_worktree")
+--
+-- 		local opts = { noremap = true, silent = true }
+--
+-- 		-- vim.keymap.set(
+-- 		-- 	"n",
+-- 		-- 	"<Leader>gs",
+-- 		-- 	"<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+-- 		-- 	opts
+-- 		-- )
+-- 		-- vim.keymap.set("n", "<leader>a", mark.add_file)
+-- 	end,
+-- }
 -- "ThePrimeagen/harpoon",
 --
 --
