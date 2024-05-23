@@ -31,11 +31,11 @@ return {
 
     {
         "dracula/vim",
-        name = "dracula",
+        as = "dracula",
         config = function()
-		disable_background = true
- 		vim.api.nvim_set_option('background', 'dark')
- 		vim.cmd('colorscheme dracula')
+            disable_background = true
+            vim.api.nvim_set_option('background', 'dark')
+            vim.cmd('colorscheme dracula')
             ColorMyPencils()
         end
     },

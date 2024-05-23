@@ -16,14 +16,14 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Yank to systems clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- in visual mode paste without yanking selected Text
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- delete without yanking
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- formating using lsp format
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
@@ -38,14 +38,16 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- my own mapping (experimental)
-vim.keymap.set("n", ">", ">>:let sw = &shiftwidth<CR>:execute 'normal ' . sw . 'l'<CR>", {silent = true})
-vim.keymap.set("n", "<", "<<:let sw = &shiftwidth<CR>:execute 'normal ' . sw . 'l'<CR>", {silent = true})
+vim.keymap.set("n", ">", ">>:let sw = &shiftwidth<CR>:execute 'normal ' . sw . 'l'<CR>", { silent = true })
+vim.keymap.set("n", "<", "<<:let sw = &shiftwidth<CR>:execute 'normal ' . sw . 'l'<CR>", { silent = true })
 
 -- Stay in indent mode
-vim.keymap.set("v", "<", "<gv^", {silent = true})
-vim.keymap.set("v", ">", ">gv^", {silent = true})
+vim.keymap.set("v", "<", "<gv^", { silent = true })
+vim.keymap.set("v", ">", ">gv^", { silent = true })
 
 -- searching for word under cursor and replacing ever occurrance in buffer
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- vim.keymap.set("v", "<leader>S", [[:s/\v%V//g<Left><Left><Left>]])
 -- I'm too stupid to create a mapping taking what is in visual mode and looking for it in whole buffer to be replaced
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
