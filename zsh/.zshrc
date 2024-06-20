@@ -37,7 +37,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-if type "fzf" > /dev/null; then
+if type "oh-my-posh" > /dev/null; then
     if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
         eval "$(oh-my-posh init zsh --config ~/.config/omp/zen.toml)"
     fi
