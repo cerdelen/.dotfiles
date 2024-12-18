@@ -50,4 +50,5 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- vim.keymap.set("v", "<leader>S", [[:s/\v%V//g<Left><Left><Left>]])
 -- I'm too stupid to create a mapping taking what is in visual mode and looking for it in whole buffer to be replaced
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
