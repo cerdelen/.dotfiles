@@ -9,11 +9,11 @@ return {
                 'regex',
             },
             min_count_to_highlight = 2,
-            vim.cmd [[
+        })
+        vim.cmd [[
               highlight IlluminatedWordText guibg=#3c3836 gui=none
               highlight IlluminatedWordRead guibg=#3c3836 gui=none
               highlight IlluminatedWordWrite guibg=#504945 gui=none
             ]]
-        })
     end
 }
