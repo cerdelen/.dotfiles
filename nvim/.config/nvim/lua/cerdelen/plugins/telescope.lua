@@ -7,7 +7,24 @@ return {
         "nvim-lua/plenary.nvim"
     },
     config = function()
-    	require('telescope').setup({})
+    	require('telescope').setup({
+            defaults = { border = false },
+            pickers = {
+                find_files = {
+                    theme = "ivy",
+                },
+                git_files = {
+                    theme = "ivy",
+                },
+                grep_string = {
+                    theme = "ivy",
+                },
+                live_grep = {
+                    theme = "ivy",
+                },
+            }
+        })
+
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -21,8 +38,8 @@ return {
             builtin.grep_string({ search = word })
         end)
         vim.keymap.set('n', '<leader>ps', function()
-		builtin.live_grep();
-	end)
+            builtin.live_grep();
+        end)
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
     end
 }
